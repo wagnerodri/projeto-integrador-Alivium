@@ -30,3 +30,11 @@ Organizar o desenvolvimento do projeto, controlar as versões dos arquivos e per
 ## Trabalho em equipe
 
 Todos os integrantes devem colaborar no desenvolvimento, revisar as alterações e resolver conflitos em conjunto. Os conflitos deverão ser documentados no Pull Request correspondente.
+
+## Tecnologias utilizadas
+
+- HTML: estrutura das páginas do projeto.
+- CSS: estilização e organização do layout.
+- JavaScript: funcionalidades e interações da interface.
+- Git: controle de versão do código.
+- GitHub: hospedagem do repositório e colaboração no desenvolvimento.
