@@ -26,10 +26,11 @@ jobs:
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Preparar arquivos do site
+           - name: Preparar arquivos do site
         run: |
           mkdir public
           cp -r P1-Alivium/Alivium/. public/
+          cp public/Home.html public/index.html
           touch public/.nojekyll
 
       - name: Enviar arquivos para publicação
