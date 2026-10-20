@@ -4,7 +4,10 @@ name: Publicar Alivium no GitHub Pages
 on:
   push:
     branches:
-      - main
+      - feature/publicacao-github-pages
+    paths:
+      - "P1-Alivium/Alivium/**"
+      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -17,37 +20,31 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Baixar o repositório
+      - name: Baixar arquivos do repositorio
         uses: actions/checkout@v4
 
-      - name: Preparar GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Preparar GitHub Pages
+      - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Preparar arquivos do site
         run: |
-          mkdir public
-          cp -r P1-Alivium/Alivium/. public/
-          cp public/Home.html public/index.html
-          touch public/.nojekyll
+          mkdir -p _site
+          cp -R P1-Alivium/Alivium/. _site/
+          cp _site/Home.html _site/index.html
+          touch _site/.nojekyll
 
-      - name: Enviar arquivos para publicação
-        uses: actions/upload-pages-artifact@v3
+      - name: Enviar arquivos para publicacao
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: public
+          path: _site
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Publicar site
         id: deployment
         uses: actions/deploy-pages@v4
