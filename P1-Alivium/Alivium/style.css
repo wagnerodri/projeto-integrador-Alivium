@@ -1,0 +1,624 @@
+/* 
+   Estrutura organizada por componentes
+ */
+
+:root {
+    --verde: #176b63;
+    --verde-escuro: #123f3b;
+    --verde-claro: #d9eee8;
+    --coral: #e88768;
+    --coral-escuro: #d87557;
+    --creme: #f7f5ef;
+    --texto: #233b3a;
+    --branco: #ffffff;
+    --borda: #dce5df;
+    --sombra: 0 12px 30px rgba(25, 69, 64, 0.08);
+}
+
+/* ---------- RESET E BASE ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--texto);
+    background: var(--creme);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 18px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h1 {
+    max-width: 650px;
+    font-size: clamp(2.7rem, 6vw, 5.3rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+p {
+    margin: 0 0 20px;
+    line-height: 1.7;
+}
+
+/* ---------- CABECALHO E NAVEGACAO ---------- */
+
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 14px max(24px, calc((100% - 1160px) / 2));
+
+    background: rgba(247, 245, 239, 0.96);
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo-topo img {
+    display: block;
+    width: 124px;
+    height: 72px;
+    object-fit: contain;
+}
+
+#nav-principal {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+#nav-principal a {
+    padding: 10px 0;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+#nav-principal a:hover,
+#nav-principal a.ativo {
+    color: var(--verde);
+    border-color: var(--coral);
+}
+
+/* Menu mobile controlado somente por HTML e CSS */
+
+.menu-checkbox {
+    display: none;
+}
+
+.menu-button {
+    display: none;
+    color: var(--verde);
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+/* ---------- ELEMENTOS DE APOIO ---------- */
+
+.eyebrow {
+    color: var(--coral);
+    font: 700 0.78rem/1.2 Arial, sans-serif;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 14px 20px;
+    border-radius: 3px;
+
+    font: 700 0.88rem Arial, sans-serif;
+    text-decoration: none;
+
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-principal {
+    color: var(--branco);
+    background: var(--coral);
+}
+
+.btn-principal:hover {
+    background: var(--coral-escuro);
+}
+
+.btn-claro {
+    color: var(--verde);
+    background: var(--branco);
+}
+
+/* ---------- PAGINA INICIAL ---------- */
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+
+    background:
+        linear-gradient(90deg, rgba(20, 65, 60, 0.9), rgba(20, 65, 60, 0.42)),
+        url("img/síndrome-de-burnout-no-trabalho.jpeg") center / cover;
+}
+
+.hero-conteudo,
+.pagina-cabecalho {
+    width: min(1160px, calc(100% - 48px));
+    margin: auto;
+}
+
+.hero-conteudo {
+    padding: 90px 0;
+    color: var(--branco);
+}
+
+.hero-conteudo > p:not(.eyebrow) {
+    max-width: 560px;
+    font-size: 1.15rem;
+}
+
+.hero .eyebrow {
+    color: #ffd1bd;
+}
+
+.secao {
+    max-width: 1160px;
+    margin: auto;
+    padding: 100px 24px;
+}
+
+.secao-cabecalho {
+    max-width: 660px;
+    margin-bottom: 42px;
+}
+
+.secao-cabecalho h2 {
+    color: var(--verde);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 30px;
+    background: var(--branco);
+    border-top: 4px solid var(--coral);
+    box-shadow: var(--sombra);
+}
+
+.card i {
+    display: block;
+    margin-bottom: 30px;
+    color: var(--coral);
+    font-size: 1.7rem;
+}
+
+.card h3 {
+    color: var(--verde);
+    font-size: 1.3rem;
+}
+
+.card p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 0.94rem;
+}
+
+.link-card {
+    display: inline-block;
+    margin-top: 22px;
+    color: var(--verde);
+    font: 700 0.86rem Arial, sans-serif;
+    text-decoration: none;
+}
+
+.link-card span {
+    color: var(--coral);
+    font-size: 1.1rem;
+}
+
+.destaque {
+    padding: 90px max(24px, calc((100% - 1160px) / 2));
+    color: var(--branco);
+    background: var(--verde);
+}
+
+.destaque > div {
+    max-width: 620px;
+}
+
+.destaque h2 {
+    color: var(--branco);
+}
+
+/* ---------- PAGINAS INTERNAS ---------- */
+
+.pagina-cabecalho {
+    padding: 100px 0 70px;
+}
+
+.pagina-cabecalho h1 {
+    max-width: 780px;
+    color: var(--verde);
+    font-size: clamp(2.4rem, 5vw, 4.6rem);
+}
+
+.pagina-cabecalho > p:last-child {
+    max-width: 640px;
+    font-size: 1.1rem;
+}
+
+/* ---------- QUEM SOMOS ---------- */
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    max-width: 1160px;
+    margin: 0 auto 100px;
+
+    background: var(--verde-claro);
+}
+
+.sobre-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+}
+
+.sobre-texto {
+    padding: clamp(35px, 6vw, 80px);
+}
+
+.sobre-texto h2 {
+    color: var(--verde);
+}
+
+.sobre-texto p {
+    font-size: 1.02rem;
+}
+
+/* Cards dos integrantes e seus papéis no projeto */
+.equipe-projeto {
+    padding-top: 0;
+}
+
+.integrantes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.integrante-card {
+    padding: 26px;
+    background: var(--branco);
+    border-top: 4px solid var(--coral);
+    box-shadow: var(--sombra);
+}
+
+.integrante-avatar {
+    display: grid;
+    width: 58px;
+    aspect-ratio: 1;
+    place-items: center;
+    margin-bottom: 18px;
+    color: var(--branco);
+    background: var(--verde);
+    border-radius: 50%;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+img.integrante-avatar {
+    object-fit: cover;
+}
+
+.integrante-funcao {
+    margin-bottom: 8px;
+    color: var(--coral);
+    font: 700 0.72rem Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.integrante-card h3 {
+    margin-bottom: 10px;
+    color: var(--verde);
+    font-size: 1.2rem;
+}
+
+.integrante-card > p:last-child {
+    margin: 0;
+    font: 0.92rem/1.6 Arial, sans-serif;
+}
+
+.valores {
+    padding-top: 0;
+}
+
+/* ---------- PROFISSIONAIS ---------- */
+
+.profissionais-intro {
+    padding-bottom: 55px;
+}
+
+.profissionais-secao {
+    padding-top: 0;
+}
+
+.profissionais-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+}
+
+.profissional-card {
+    display: grid;
+    grid-template-columns: minmax(150px, 38%) 1fr;
+    overflow: hidden;
+    background: var(--branco);
+    box-shadow: var(--sombra);
+}
+
+.profissional-card > img {
+    width: 100%;
+    height: 100%;
+    min-height: 270px;
+    object-fit: cover;
+}
+
+.profissional-info {
+    padding: 28px;
+}
+
+.profissional-info h3 {
+    color: var(--verde);
+    font-size: 1.45rem;
+}
+
+.profissional-info p:not(.profissao) {
+    font: 0.92rem/1.6 Arial, sans-serif;
+}
+
+.profissao {
+    color: var(--coral);
+    font: 700 0.72rem Arial, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ---------- CONTATO ---------- */
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 30px;
+
+    max-width: 1160px;
+    margin: 0 auto 100px;
+}
+
+.contato-info,
+.contato-form {
+    padding: clamp(28px, 5vw, 58px);
+    background: var(--branco);
+}
+
+.contato-info {
+    color: var(--branco);
+    background: var(--verde);
+}
+
+.contato-info h2 {
+    color: var(--branco);
+}
+
+.contato-info a {
+    display: block;
+    margin: 18px 0;
+    text-decoration: none;
+}
+
+.contato-info i {
+    width: 24px;
+    color: #ffd1bd;
+}
+
+.contato-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--verde);
+    font: 700 0.8rem Arial, sans-serif;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 13px;
+
+    color: var(--texto);
+    background: #fbfdfc;
+    border: 1px solid #cadbd6;
+    border-radius: 2px;
+
+    font: 1rem Georgia, "Times New Roman", serif;
+}
+
+.contato-form textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+/* ---------- RODAPE ---------- */
+
+.footer {
+    padding: 60px max(24px, calc((100% - 1160px) / 2)) 20px;
+    color: var(--branco);
+    background: var(--verde-escuro);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-bottom: 45px;
+}
+
+.footer img {
+    width: 132px;
+    height: 78px;
+    object-fit: contain;
+}
+
+.footer h2 {
+    font-size: 1.1rem;
+}
+
+.footer a {
+    display: block;
+    margin: 10px 0;
+    color: #cce3dc;
+    font: 0.9rem Arial, sans-serif;
+    text-decoration: none;
+}
+
+.footer p {
+    color: #cce3dc;
+    font: 0.9rem/1.7 Arial, sans-serif;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+@media (max-width: 700px) {
+    .topo {
+        padding: 8px 20px;
+    }
+
+    .logo-topo img {
+        width: 108px;
+        height: 64px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    #nav-principal {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px 20px 20px;
+        background: var(--creme);
+        box-shadow: 0 12px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .menu-checkbox:checked + .menu-button + #nav-principal {
+        display: flex;
+    }
+
+    #nav-principal a {
+        padding: 14px 4px;
+    }
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-conteudo,
+    .pagina-cabecalho {
+        width: min(100% - 40px, 1160px);
+    }
+
+    .secao {
+        padding: 70px 20px;
+    }
+
+    .cards,
+    .integrantes-grid,
+    .sobre-grid,
+    .footer-container,
+    .profissionais-grid,
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .sobre-grid {
+        margin: 0 20px 70px;
+    }
+
+    .sobre-imagem img {
+        min-height: 260px;
+    }
+
+    .profissional-card {
+        grid-template-columns: minmax(120px, 35%) 1fr;
+    }
+
+    .profissional-card > img {
+        min-height: 240px;
+    }
+
+    .profissional-info {
+        padding: 22px 18px;
+    }
+
+    .pagina-cabecalho {
+        padding: 70px 0 45px;
+    }
+
+    .footer {
+        padding: 45px 20px 18px;
+    }
+}
