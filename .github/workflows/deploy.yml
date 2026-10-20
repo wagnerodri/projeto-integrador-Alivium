@@ -1,0 +1,6 @@
+      - name: Preparar arquivos do site
+        run: |
+          mkdir public
+          cp -r P1-Alivium/Alivium/. public/
+          cp public/Home.html public/index.html
+          touch public/.nojekyll
