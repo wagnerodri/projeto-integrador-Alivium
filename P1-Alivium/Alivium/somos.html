@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Conheça a Alivium e sua proposta de cuidado psicológico."><title>Alivium | Quem somos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <!-- Cabeçalho e navegação da página institucional -->
-  <header class="topo"><a class="logo-topo" href="Home.html" aria-label="Alivium, início"><img src="img/logoOriginal.png" alt="Logo Alivium"></a><input class="menu-checkbox" type="checkbox" id="menu-somos"><label class="menu-button" for="menu-somos" aria-label="Abrir menu"><i class="fas fa-bars" aria-hidden="true"></i></label><nav id="nav-principal" aria-label="Navegação principal"><a href="Home.html">Início</a><a class="ativo" href="somos.html">Quem somos</a><a href="profissionais.html">Profissionais</a><a href="contatos.html">Contato</a></nav></header>
+  <header class="topo navbar navbar-expand-lg"><a class="logo-topo navbar-brand" href="Home.html" aria-label="Alivium, início"><img src="img/logoOriginal.png" alt="Logo Alivium"></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-principal" aria-controls="nav-principal" aria-expanded="false" aria-label="Abrir ou fechar menu"><span class="navbar-toggler-icon"></span></button><nav class="collapse navbar-collapse" id="nav-principal" aria-label="Navegação principal"><div class="navbar-nav ms-auto"><a class="nav-link" href="Home.html">Início</a><a class="nav-link ativo" aria-current="page" href="somos.html">Quem somos</a><a class="nav-link" href="profissionais.html">Profissionais</a><a class="nav-link" href="contatos.html">Contato</a><!-- Acesso e cadastro ficam no fim da navegação, após Contato. --><a class="nav-link" href="login.html">Entrar</a></div></nav></header>
   <main>
     <!-- Apresentação da história e do propósito da Alivium -->
     <section class="pagina-cabecalho"><p class="eyebrow">Quem somos</p><h1>Uma rede de cuidado para momentos que pedem atenção.</h1><p>A Alivium nasceu para aproximar saúde mental e cotidiano, tornando a busca por apoio mais simples, humana e possível.</p></section>
@@ -68,6 +69,8 @@
     <section class="secao valores"><div class="secao-cabecalho"><p class="eyebrow">O que nos guia</p><h2>Cuidado que respeita cada história</h2></div><div class="cards"><article class="card"><i class="fas fa-shield-heart" aria-hidden="true"></i><h3>Privacidade</h3><p>Seu processo acontece com discrição, segurança e respeito.</p></article><article class="card"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i><h3>Humanidade</h3><p>O acolhimento vem antes de qualquer diagnóstico ou solução.</p></article><article class="card"><i class="fas fa-seedling" aria-hidden="true"></i><h3>Prevenção</h3><p>Promovemos hábitos e relações que sustentam o bem-estar.</p></article></div></section>
   </main>
   <!-- Rodapé institucional e canais de contato -->
-  <footer class="footer" id="contato"><div class="footer-container"><div><img src="img/logoOriginal.png" alt="Logo Alivium"></div><div><h2>Alivium</h2><p>Saúde mental com acolhimento e propósito.</p></div><div><h2>Contato</h2><a href="contatos.html">Fale com nossa equipe</a><a href="mailto:contato@alivium.com.br">contato@alivium.com.br</a><a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div><p class="footer-bottom">Desenvolvido pela equipe DSM-FATEC &copy; 2026</p></footer>
+  <footer class="footer" id="contato"><div class="footer-container"><div><img src="img/logoOriginal.png" alt="Logo Alivium"></div><div><h2>Alivium</h2><p>Saúde mental com acolhimento e propósito.</p></div><div><h2>Contato</h2><a href="contatos.html">Fale com nossa equipe</a><a href="mailto:contato@alivium.com.br">contato@alivium.com.br</a><a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div><p class="footer-bottom">Desenvolvido pela equipe DSM-FATEC &copy; <span data-current-year>2026</span></p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
