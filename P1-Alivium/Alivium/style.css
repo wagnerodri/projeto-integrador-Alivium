@@ -622,3 +622,58 @@ img.integrante-avatar {
         padding: 45px 20px 18px;
     }
 }
+
+/* ---------- INTEGRACAO BOOTSTRAP 5.3.3 ---------- */
+/* O Bootstrap fornece a grade responsiva; estas regras preservam a identidade Alivium. */
+.cards.row,
+.profissionais-grid.row,
+.integrantes-grid.row,
+.contato-grid.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards.row > .card {
+    min-width: 0;
+}
+
+.profissionais-grid.row > .profissional-card,
+.integrantes-grid.row > .integrante-card,
+.contato-grid.row > .contato-info,
+.contato-grid.row > .contato-form {
+    min-width: 0;
+}
+
+/* Mantém campos e botões alinhados à paleta do projeto, mesmo com o framework. */
+.form-control:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.2rem rgba(23, 107, 99, 0.16);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+/* O menu da página de acesso usa o componente navbar-collapse do Bootstrap. */
+@media (max-width: 991.98px) {
+    #nav-principal.collapse:not(.show) {
+        display: none !important;
+    }
+
+    #nav-principal.collapse.show {
+        display: block;
+    }
+
+    #nav-principal .navbar-nav {
+        align-items: stretch;
+    }
+}
+
+@media (min-width: 992px) {
+    #nav-principal.collapse {
+        display: flex !important;
+    }
+}
